@@ -33,14 +33,13 @@ class TradePackage:
             embedVar.add_field(name=self.askerName, value="***PRICE*** : `${}`".format(self.price), inline=False)
             embedVar.add_field(name=self.bidderName, value="***CARD*** : `{}`".format(self.card), inline=False)
         elif stage == 2:
-            embedVar = discord.Embed(title="Trade Completion", color=0xFF9900)
-            embedVar.add_field(name =self.askerName, value= "❌", inline = True)
+            embedVar = discord.Embed(title="Trade Completion", color=0xFF00FF)
+            embedVar.add_field(name =self.askerName, value= "➡️", inline = True)
             embedVar.add_field(name = '`Task`', value = "Send `{}` card to this bot".format(self.card), inline = True)
             embedVar.add_field(name = 'Status', value = "❌", inline = True)
 
-            embedVar.add_field(name = self.bidderName, value = "❌", inline = True)
+            embedVar.add_field(name = self.bidderName, value = "➡️", inline = True)
             embedVar.add_field(name = '`Task`', value = "Send $`{}` to this Venmo".format(self.price), inline = True)
             embedVar.add_field(name = 'Status', value = "❌", inline = True)
 
-            embedVar.set_footer(text=self.askerName)
         return embedVar

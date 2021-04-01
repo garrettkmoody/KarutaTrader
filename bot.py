@@ -38,6 +38,7 @@ async def trade(ctx, arg1, arg2, arg3):
         print("holder")
     else:
         await ctx.send("Please enter a `b` for BID or `a` for ASK")
+        await ctx.send("k!d")
 
 @bot.event
 async def on_reaction_add(reaction, user):
@@ -47,7 +48,8 @@ async def on_reaction_add(reaction, user):
         return
     if reaction.emoji == '💳':
         tradePack.set_bidderName(user)
-        await lastMessage.edit(embed=tradePack.get_embed(2))
+        await lastMessage.edit(embed=tradePack.get_embed(1))
+        await lastMessage.channel.send(embed=tradePack.get_embed(2))
 
 @bot.command(name="help")
 async def help(ctx):
