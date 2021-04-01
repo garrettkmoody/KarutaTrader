@@ -2,9 +2,12 @@
 import os
 import random
 import discord
+import keystokens
+from coinbase.wallet.client import Client
 from tradePackage import TradePackage
 from discord.ext import commands
-TOKEN = "ODI2NzE1MDUxMDE1Nzk4Nzk0.YGQgYw.GnItg9EEHZnMI0d7FKp9FbVHIy8"
+coinClient = Client(keystokens.coinbaseApiKey, keystokens.coinbaseApiSecret)
+TOKEN = keystokens.discordToken
 GUILDNUM = "706297495122214984"
 client = discord.Client()
 bot = commands.Bot(command_prefix='x')
